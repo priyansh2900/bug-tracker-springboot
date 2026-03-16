@@ -1,4 +1,4 @@
-Bug Tracker REST API
+# Bug Tracker REST API
 
 A backend REST API for managing software bugs/issues built using Java and Spring Boot.
 This application allows users to create, view, update, and delete bug reports and demonstrates a clean layered backend architecture.
@@ -6,7 +6,7 @@ This application allows users to create, view, update, and delete bug reports an
 A RESTful backend application for tracking and managing software bugs/issues.
 This project is built using Java and Spring Boot and demonstrates a clean backend architecture with database integration.
 
-Tech Stack
+## Tech Stack
 	•	Java
 	•	Spring Boot
 	•	MySQL
@@ -16,7 +16,7 @@ Tech Stack
 	•	Maven
 	•	GitHub
 
-Features
+## Features
 	•	Create a new bug report
 	•	Retrieve all bug reports
 	•	Retrieve a bug by ID
@@ -25,56 +25,63 @@ Features
 	•	RESTful API design
 	•	Interactive API testing using Swagger UI
 
-Project Architecture
+## Project Architecture
 
 The project follows a layered architecture commonly used in backend applications.
 
-Controller Layer → Handles HTTP requests
-Service Layer → Contains business logic
-Repository Layer → Handles database operations
-Entity Layer → Represents database tables
+- **Controller Layer** → Handles HTTP requests
+- **Service Layer** → Contains business logic
+- **Repository Layer** → Handles database operations
+- **Entity Layer** → Represents database tables
 
 This structure improves maintainability and separates concerns within the application.
 
-Project Structure
+## Project Structure
+
+```
 bug-tracker-springboot
 │
 ├── src/main/java/com/priyansh/bugtracker
 │   ├── controller
 │   │   └── BugController.java
-│   │
 │   ├── service
 │   │   └── BugService.java
-│   │
 │   ├── repository
 │   │   └── BugRepository.java
-│   │
-│   ├── entity
-│   │   └── Bug.java
-│   │
-│   └── BugtrackerApplication.java
+│   └── entity
+│       └── Bug.java
 │
 ├── src/main/resources
 │   └── application.properties
 │
-└── pom.xml
+├── pom.xml
+└── BugtrackerApplication.java
+```
 
 API Endpoints
-Method               Endpoint           Description
-POST                 /bugs             Create a new bug
-GET                  /bugs             Get all bugs
-GET                 /bugs/{id}         Get bug by ID
-PUT                 /bugs/{id}         Update bug
-DELETE              /bugs/{id}         Delete bug
+## API Endpoints
 
-  Example Request
-  create Bug
-  POST/bugs
-  {
+| Method | Endpoint | Description |
+|------|------|------|
+| POST | /bugs | Create a new bug |
+| GET | /bugs | Get all bugs |
+| GET | /bugs/{id} | Get bug by ID |
+| PUT | /bugs/{id} | Update bug |
+| DELETE | /bugs/{id} | Delete bug |
+
+
+## Example Request
+
+POST `/bugs`
+
+```json
+{
   "title": "Login button bug",
   "description": "Login button not working",
   "status": "OPEN"
-  }
+}
+```
+
   Running the Project Locally
   1.Clone the repository
   git clone https://github.com/priyansh2900/bug-tracker-springboot.git
